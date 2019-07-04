@@ -1,0 +1,21 @@
+@if(auth()->user()->user_type == "Tasker")
+									@foreach($tasks as $task)
+										@if($job->id == $task->task_id_fk)
+											<br>
+											<!--<form action="/xyz" method="POST" class="form-horizontal" role="form">
+												<button class="btn btn-success" style="margin-bottom: 10px;">Apply for this Task</button>
+											</form>-->
+											<br>
+											<a href="" class="btn btn-danger float-right" style="margin-bottom: 10px; margin-right: 20px;">Cancel This Task</a>
+											@break
+											<br>
+											<!--<form action="/xyz" method="POST" class="form-horizontal" role="form">
+												<button class="btn btn-success" style="margin-bottom: 10px;">Apply for this Task</button>
+											</form>-->
+										@endif
+									@endforeach
+									@foreach($tasks as $task)
+										<a href="/xyz/{{$job->id}}" class="btn btn-success float-right" style="margin-bottom: 10px; margin-right: 20px;">Apply for this Task</a>
+										<br>
+									@endforeach
+								@endif
